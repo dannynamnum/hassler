@@ -1,0 +1,18 @@
+Deploying this preview
+======================
+
+1. Go to dash.cloudflare.com -> Workers & Pages -> Create -> Pages -> Upload assets
+2. Project name: hassler-preview
+3. Drag this whole folder in (index.html + og-image.jpg). Deploy.
+   You now have a working link at hassler-preview.pages.dev
+
+4. To use hassler.namnum.net instead:
+   - namnum.net's nameservers must point to Cloudflare (one-time, done in your registrar)
+   - In the Pages project: Custom domains -> Set up a custom domain -> hassler.namnum.net
+   - Cloudflare adds the DNS record and the SSL certificate itself
+
+5. Test the link preview before texting it:
+   https://www.opengraph.xyz  - paste the URL, confirm the photo and title show
+
+Note: the page is set to noindex, so it will not appear in Google.
+If the URL ever changes, update the og:url and og:image values at the top of index.html.
