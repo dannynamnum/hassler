@@ -303,28 +303,47 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .hero--page .hero__figure img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero--page .hero__text .rule{ max-width:220px; }
 
-/* Holiday puts the Santa's Design Helpers mark in the image slot rather than a
-   photograph. The red needs air around it, so the badge is contained with
-   generous padding on a warm ground instead of cropped to fill. */
-.hero__figure--badge{ background:var(--pine); }
-.hero__figure--badge::after{
+/* Holiday's hero panel: the photograph printed in the campaign red, with the
+   Santa's Design Helpers mark as white line art over it. The room stays sharp
+   and readable, the whole panel reads red, and the mark loses the red block
+   that made it look like a logo pasted onto a coloured rectangle.
+
+   How the wash works: the photograph is desaturated and composited in
+   `luminosity` so it contributes tone only, then a flat red multiplies over
+   it. Both sit on a red ground so the blend has something to resolve against. */
+.hero__figure--wash{ background:#8E1A1F; overflow:hidden; }
+.wash__shot{ position:absolute; inset:0; }
+.hero--page .wash__shot img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  filter:grayscale(1) contrast(1.06) brightness(.92); mix-blend-mode:luminosity;
+}
+.wash__ink{ position:absolute; inset:0; background:#BE2026; mix-blend-mode:multiply; opacity:.86; }
+.hero__figure--wash::after{
   content:""; position:absolute; inset:clamp(20px,2.4vw,34px);
-  border:1px solid rgba(245,243,239,.24); pointer-events:none;
+  border:1px solid rgba(255,255,255,.28); pointer-events:none;
 }
-.hero--page .hero__figure--badge > picture{
-  inset:clamp(48px,5.6vw,84px); display:flex; align-items:center; justify-content:center;
+.wash__mark{
+  position:absolute; inset:clamp(52px,6.4vw,96px);
+  display:flex; align-items:center; justify-content:center;
 }
-.hero--page .hero__figure--badge img{
-  position:static; width:auto; height:100%; max-width:100%;
-  object-fit:contain; margin:0 auto;
+.hero--page .wash__mark img{
+  position:static; width:auto; height:100%; max-width:100%; object-fit:contain;
+  filter:drop-shadow(0 6px 22px rgba(0,0,0,.34));
+}
+
+/* No blend modes, no wash: show the mark on flat red rather than a muddy
+   grey-red composite. */
+@media (forced-colors:active), (prefers-contrast:more){
+  .hero--page .wash__shot{ display:none; }
+  .wash__ink{ mix-blend-mode:normal; opacity:1; }
 }
 
 @media (max-width:860px){
   .hero{ grid-template-columns:1fr; }
   .hero__figure{ min-height:0; aspect-ratio:4/5; order:1; }
   .hero--page .hero__figure{ min-height:0; aspect-ratio:4/3; }
-  .hero--page .hero__figure--badge{ aspect-ratio:4/3; }
-  .hero--page .hero__figure--badge > picture{ inset:clamp(34px,9vw,64px); }
+  .hero--page .hero__figure--wash{ aspect-ratio:4/3; }
+  .hero--page .wash__mark{ inset:clamp(30px,8vw,56px); }
   .hero__text{
     order:2; margin-right:0; gap:20px;
     padding:40px var(--gutter) 48px;
@@ -458,10 +477,38 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .band--pine .display{ color:var(--paper); }
 .band--pine .prose{ color:#D7DED8; }
 .band--pine .rule::before, .band--pine .rule::after{ background:rgba(245,243,239,.22); }
-.cta-row{ display:flex; flex-wrap:wrap; gap:32px 56px; align-items:flex-end; justify-content:space-between; }
-.cta-direct{ display:flex; flex-direction:column; gap:10px; font-family:var(--sans); font-size:16px; letter-spacing:.03em; }
-.cta-direct a{ align-self:flex-start; color:var(--paper); text-decoration:none; border-bottom:1px solid rgba(245,243,239,.4); }
-.cta-direct a:hover{ border-bottom-color:var(--paper); }
+/* This is a banner, not a section: one shallow horizontal strip, the copy on
+   the left and the button on the right, both centred on the same axis. The
+   band gets its own reduced padding — the standard section rhythm made it
+   twice as tall as it needed to be and left the button floating. */
+.band--banner{ padding:clamp(38px,4.2vw,58px) 0; }
+.cta-row{
+  display:flex; flex-wrap:wrap; gap:24px 56px;
+  align-items:center; justify-content:space-between;
+}
+.cta-row .stack{ gap:10px; }
+.cta-row .display{ font-size:clamp(26px,3vw,38px); }
+.cta-row .prose{ max-width:58ch; }
+.cta-row .btn{ flex:none; align-self:center; }
+@media (max-width:700px){
+  .cta-row{ align-items:flex-start; }
+  .cta-row .btn{ align-self:flex-start; }
+}
+
+/* --- the holiday teaser on Home: one panoramic photograph, contained rather
+   than full bleed, with the copy beneath it. It replaces the three pine cards,
+   which put a third slab of green on a page that already ends in two. The
+   three-step cards still live on the Holiday page, where they belong. ----- */
+.pano{ margin:0; position:relative; overflow:hidden; aspect-ratio:11/5; background:var(--paper); }
+.pano img{ width:100%; height:100%; object-fit:cover; display:block; }
+.pano::after{ content:""; position:absolute; inset:16px; border:1px solid rgba(245,243,239,.34); pointer-events:none; }
+@media (max-width:700px){ .pano{ aspect-ratio:16/10; } .pano::after{ inset:11px; } }
+
+.pano-note{
+  display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
+  gap:18px 48px; margin-top:clamp(22px,2.6vw,34px);
+}
+.pano-note .prose{ max-width:62ch; }
 
 /* ==========================================================================
    Footer
