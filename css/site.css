@@ -168,22 +168,23 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .nav-toggle i{ display:block; width:20px; height:1px; background:var(--ink); }
 .nav-toggle i + i{ margin-top:5px; }
 
-.nav ul{ display:flex; flex-wrap:wrap; gap:8px 28px; margin:0; padding:0; list-style:none; }
+.nav ul{ display:flex; flex-wrap:nowrap; gap:0 22px; margin:0; padding:0; list-style:none; }
+.nav li{ flex:none; }
 .nav a{
-  font-family:var(--sans); font-size:11.5px; font-weight:400;
-  letter-spacing:.19em; text-transform:uppercase;
+  font-family:var(--sans); font-size:11px; font-weight:400;
+  letter-spacing:.16em; text-transform:uppercase; white-space:nowrap;
   color:var(--ink); text-decoration:none;
   padding-bottom:4px; border-bottom:1px solid transparent;
 }
 .nav a:hover{ border-bottom-color:var(--stone); }
 .nav a[aria-current="page"]{ color:var(--pine); border-bottom-color:var(--red); }
 
-@media (max-width:940px){
+@media (max-width:1080px){
   .nav-toggle{ display:block; }
   .nav{ display:none; width:100%; border-top:1px solid var(--line); }
   .nav.is-open{ display:block; }
   .site-head .shell{ flex-wrap:wrap; row-gap:0; }
-  .nav ul{ flex-direction:column; gap:0; padding:8px 0 14px; }
+  .nav ul{ flex-direction:column; flex-wrap:wrap; gap:0; padding:8px 0 14px; }
   .nav li + li{ border-top:1px solid var(--line); }
   .nav a{ display:block; padding:16px 0; border-bottom:none; font-size:13px; }
   .nav a[aria-current="page"]{ border-bottom:none; }
@@ -220,11 +221,10 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .hero__text .prose{ max-width:34ch; }
 .hero__figure{
   margin:0; position:relative;
-  /* The three hero photographs are all 3:4 portrait. Capping the panel at
-     780px made it landscape on a big monitor, so cover threw away the top
-     and bottom of every frame. Taller keeps the panel nearer the source
-     shape, and fills more of a 1080-tall screen. */
-  min-height:min(88vh, 940px);
+  /* The hero is a single 4:3 landscape photograph again (IMG_0720), not the
+     3:4 portraits the carousel used, so the tall panel that suited those now
+     crops it hard. Back down to something nearer the source shape. */
+  min-height:min(74vh, 700px);
 }
 .hero__figure img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero__actions{ display:flex; flex-wrap:wrap; gap:12px; }
