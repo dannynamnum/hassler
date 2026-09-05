@@ -245,19 +245,24 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   gap:2px; align-items:stretch;
 }
 .steps li{
-  padding:clamp(28px,3.2vw,42px);
+  position:relative;
+  padding:clamp(80px,6.6vw,96px) clamp(28px,3.2vw,42px) clamp(30px,3.2vw,42px);
   display:flex; flex-direction:column; gap:14px;
-  background:rgb(var(--pine-rgb));
+  background:var(--pine);
 }
-/* The sequence is the point, so the ground deepens with the numbering and the
-   cards step up to the last one. Opacities are the lightest that keep every
-   text colour above WCAG AA against the warm band showing through. */
-.steps li:nth-child(1){ background:rgba(var(--pine-rgb), .82); }
-.steps li:nth-child(2){ background:rgba(var(--pine-rgb), .91); }
-.steps li:nth-child(3){ background:rgb(var(--pine-rgb)); }
-@media (min-width:761px){
-  .steps li:nth-child(1){ margin-top:22px; }
-  .steps li:nth-child(2){ margin-top:11px; }
+
+/* An ornament hung from the top edge of each card. The three shapes are the
+   ones that actually recur in her photographs — a mercury sphere, a teardrop
+   finial, a star topper — rather than icons standing in for the step. The
+   thread is what keeps it reading as decoration and not as an icon set. */
+.steps .ornament{
+  position:absolute; top:0; left:clamp(28px,3.2vw,42px);
+  width:31px; height:67px; display:block; pointer-events:none;
+}
+.steps .ornament svg{ display:block; width:100%; height:100%; overflow:visible; }
+.steps .ornament [stroke]{
+  stroke:#C6D4C9; stroke-width:1; fill:none;
+  stroke-linecap:round; stroke-linejoin:round; opacity:.85;
 }
 
 .steps .num{
