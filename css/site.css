@@ -79,6 +79,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   background-image:var(--grain);
   opacity:.055; mix-blend-mode:multiply; pointer-events:none;
 }
+.grain--dark::before{ opacity:.09; mix-blend-mode:overlay; }
 
 /* ==========================================================================
    Type primitives
@@ -246,6 +247,13 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   background:var(--paper-2); padding:clamp(28px,3.2vw,42px);
   display:flex; flex-direction:column; gap:14px;
 }
+
+/* --- the same sequence, set on pine ------------------------------------- */
+.band--pine .steps{ background:rgba(245,243,239,.22); border-color:rgba(245,243,239,.22); }
+.band--pine .steps li{ background:var(--pine); }
+.band--pine .steps .num{ color:var(--paper); }
+.band--pine .steps h3{ color:#A9BEB0; }
+.band--pine .steps p{ color:#D7DED8; }
 .steps .num{
   font-family:var(--sans); font-weight:300; font-size:var(--fs-num);
   line-height:1; letter-spacing:.02em; color:var(--pine);
