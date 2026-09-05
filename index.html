@@ -55,8 +55,8 @@ body{
   background:var(--frame-bg);
   color:var(--frame-ink);
   font-family:var(--frame-font);
-  font-weight:300;
-  line-height:1.6;
+  font-weight:400;
+  line-height:1.62;
   -webkit-font-smoothing:antialiased;
 }
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px 96px;}
@@ -124,7 +124,15 @@ body{
 .dir-inner{padding:0;}
 
 .dhead{padding:40px 44px 34px;display:flex;flex-direction:column;gap:14px;}
-.dhead .tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.72;}
+.dhead .tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.72;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.pill{
+  display:inline-block;padding:4px 10px;border:1px solid currentColor;
+  font-size:10px;letter-spacing:.16em;border-radius:2px;
+}
+.pill.on{background:#2E3D34;color:#F5F3EF;border-color:#2E3D34;}
+.direction.muted{opacity:.55;}
+.direction.muted:hover{opacity:1;}
 .dhead h2{margin:0;line-height:1.05;text-wrap:balance;}
 .dhead p{margin:0;max-width:56ch;}
 .bestfor{
@@ -188,26 +196,32 @@ body{
   font-size:clamp(26px,3.5vw,36px);letter-spacing:.16em;text-transform:uppercase;
 }
 .dirA .dhead p{
-  font-family:"Newsreader",Georgia,serif;font-weight:300;font-size:17px;
-  color:var(--a-ink);line-height:1.65;
+  font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:17.5px;
+  color:var(--a-ink);line-height:1.68;
 }
 .dirA .bestfor{border-color:var(--a-line);color:var(--a-mute);}
 .dirA .bestfor b{color:var(--a-pine);}
+.dirA .hero{min-height:420px;}
 .dirA .hero .veil{
-  background:linear-gradient(to top,rgba(245,243,239,.94) 0%,rgba(245,243,239,.62) 40%,rgba(245,243,239,.10) 76%,rgba(245,243,239,0) 100%);
+  background:linear-gradient(to top,
+    rgba(245,243,239,.99) 0%,
+    rgba(245,243,239,.97) 30%,
+    rgba(245,243,239,.80) 52%,
+    rgba(245,243,239,.34) 74%,
+    rgba(245,243,239,0) 100%);
 }
 .dirA .hero .htext h3{
-  font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:300;
+  font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:400;
   font-size:clamp(30px,4.4vw,46px);letter-spacing:.1em;text-transform:uppercase;color:var(--a-ink);
 }
-.dirA .hero .htext p{font-family:"Newsreader",Georgia,serif;color:#5B5551;font-size:16.5px;}
+.dirA .hero .htext p{font-family:"Newsreader",Georgia,serif;font-weight:400;color:#4A4441;font-size:17px;}
 .dirA .spec + .spec{border-color:var(--a-line);}
 .dirA .specimens{border-top:1px solid var(--a-line);}
 .dirA .type-display{
   font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:300;
   font-size:38px;letter-spacing:.14em;text-transform:uppercase;
 }
-.dirA .type-body{font-family:"Newsreader",Georgia,serif;font-weight:300;font-size:17px;line-height:1.72;}
+.dirA .type-body{font-family:"Newsreader",Georgia,serif;font-weight:400;font-size:17.5px;line-height:1.72;}
 .dirA .type-label{color:var(--a-pine);font-weight:500;}
 .dirA .btn-solid{background:var(--a-pine);color:#F5F3EF;}
 .dirA .btn-ghost{border:1px solid var(--a-ink);color:var(--a-ink);}
@@ -226,8 +240,8 @@ body{
   font-size:clamp(30px,4.2vw,44px);letter-spacing:-.01em;
 }
 .dirB .dhead p{
-  font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:300;
-  font-size:16px;color:#C6B9AD;line-height:1.7;
+  font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:400;
+  font-size:16.5px;color:#CFC3B7;line-height:1.72;
 }
 .dirB .bestfor{border-color:var(--b-line);color:var(--b-mute);}
 .dirB .bestfor b{color:var(--b-brass);}
@@ -238,11 +252,11 @@ body{
   font-family:"Fraunces",Georgia,serif;font-weight:300;
   font-size:clamp(34px,5vw,54px);color:var(--b-cream);letter-spacing:-.015em;
 }
-.dirB .hero .htext p{font-family:"Archivo",Helvetica,Arial,sans-serif;color:#BFB2A6;}
+.dirB .hero .htext p{font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:400;color:#CCC0B4;font-size:16px;}
 .dirB .spec + .spec{border-color:var(--b-line);}
 .dirB .specimens{border-top:1px solid var(--b-line);}
 .dirB .type-display{font-family:"Fraunces",Georgia,serif;font-weight:300;font-size:44px;letter-spacing:-.015em;}
-.dirB .type-body{font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:300;font-size:16px;line-height:1.75;color:#C6B9AD;}
+.dirB .type-body{font-family:"Archivo",Helvetica,Arial,sans-serif;font-weight:400;font-size:16.5px;line-height:1.75;color:#CFC3B7;}
 .dirB .type-label{color:var(--b-brass);font-weight:500;}
 .dirB .btn-solid{background:var(--b-red);color:#FBF6F0;}
 .dirB .btn-ghost{border:1px solid var(--b-brass);color:var(--b-brass);}
@@ -262,6 +276,15 @@ body{
 .close strong{font-weight:500;}
 .footnote{margin-top:28px;font-size:12.5px;color:var(--frame-mute);max-width:66ch;line-height:1.6;}
 
+@media (max-width:640px){
+  .dirA .type-body,.dirA .dhead p{font-size:18px;line-height:1.7;}
+  .dirB .type-body,.dirB .dhead p{font-size:17px;}
+  .hero .htext p{font-size:17px;}
+  .doc-head .lede{font-size:17px;}
+  .markcap,.bestfor{font-size:14px;}
+  .hero{min-height:340px;}
+}
+
 @media (prefers-reduced-motion:no-preference){
   .direction,.foundation,.close{transition:none;}
 }
@@ -278,10 +301,15 @@ body{
     <p class="lede">
       A style tile is the look before the layout. It shows the typefaces, the colors, the buttons
       and the way photography gets treated, so the conversation stays on how the site should feel
-      rather than where the phone number goes. Pick a direction and every page gets built from it.
+      rather than where the phone number goes.
+      <br><br>
+      <b>Direction A is the one we&rsquo;re building.</b> Body copy has been thickened from Light to Regular
+      and set larger on phones, and the headline gradient over photography is much stronger so the
+      type reads against a busy image. Direction B is kept below for reference.
     </p>
     <div class="meta">
       <span><b>Prepared</b> 4 September 2026</span>
+      <span><b>Revised</b> after review &middot; Direction A selected</span>
       <span><b>Brand</b> Pam Hassler Interiors</span>
       <span><b>Scope</b> Holiday decorating &middot; Palm Beach &amp; Martin County</span>
     </div>
@@ -424,7 +452,7 @@ body{
   <!-- ============ DIRECTION A ============ -->
   <section class="direction dirA">
     <div class="dhead">
-      <div class="tag">Direction A</div>
+      <div class="tag">Direction A <span class="pill on">Selected</span></div>
       <h2>Quiet Evergreen</h2>
       <p>
         The design firm that happens to do Christmas. Warm paper, wide-tracked capitals lifted
@@ -483,9 +511,9 @@ body{
   </section>
 
   <!-- ============ DIRECTION B ============ -->
-  <section class="direction dirB">
+  <section class="direction dirB muted">
     <div class="dhead">
-      <div class="tag">Direction B</div>
+      <div class="tag">Direction B <span class="pill">Not selected</span></div>
       <h2>Candlelight</h2>
       <p>
         Evening, not morning. A dark warm ground makes the photography glow the way a decorated room
