@@ -206,7 +206,14 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   padding-right:calc(clamp(32px,4.4vw,64px) + var(--overlap));
 }
 .hero__text .prose{ max-width:34ch; }
-.hero__figure{ margin:0; position:relative; min-height:min(84vh, 780px); }
+.hero__figure{
+  margin:0; position:relative;
+  /* The three hero photographs are all 3:4 portrait. Capping the panel at
+     780px made it landscape on a big monitor, so cover threw away the top
+     and bottom of every frame. Taller keeps the panel nearer the source
+     shape, and fills more of a 1080-tall screen. */
+  min-height:min(88vh, 940px);
+}
 .hero__figure img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .hero__meta{
   display:flex; align-items:center; gap:14px;
