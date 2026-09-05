@@ -215,6 +215,42 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 }
 .hero__meta::before{ content:""; width:38px; height:1px; background:var(--stone); flex:none; }
 
+/* --- hero carousel: crossfade, with a progress hairline on the bottom edge.
+   The rail sits on the photograph, so it carries its own scrim and shadow —
+   it has to stay visible on the brightest frame in the set, not the average
+   one. Tested against the marble frame, which is the worst case. ---------- */
+.hero__figure{ overflow:hidden; }
+.hero__slide{ position:absolute; inset:0; opacity:0; transition:opacity 1.15s ease; }
+.hero__slide.is-on{ opacity:1; }
+
+.hero__rail{
+  position:absolute; left:0; right:0; bottom:0; height:44px; z-index:3;
+  display:flex; gap:2px; align-items:flex-end;
+  /* the paper panel overlaps this figure, so inset the rail by the same
+     amount or the first segment is short by whatever is hidden behind it */
+  padding-left:var(--overlap);
+  background:linear-gradient(to top, rgba(51,48,46,.52), rgba(51,48,46,0));
+}
+.hero__rail button{
+  flex:1 1 0; height:3px; margin:0 0 14px; padding:0; border:0; cursor:pointer;
+  position:relative; background:rgba(245,243,239,.44);
+  box-shadow:0 1px 3px rgba(30,28,26,.5);
+}
+.hero__rail button:first-child{ margin-left:24px; }
+.hero__rail button:last-child{ margin-right:24px; }
+.hero__rail button span{ position:absolute; inset:0; display:block; width:0; background:var(--paper); }
+.hero__rail button[aria-current="true"] span{ width:100%; transition:width 6s linear; }
+.hero__rail button:focus-visible{ outline:2px solid var(--paper); outline-offset:5px; }
+/* once someone takes control the fill stops animating, so it never implies
+   the carousel is still running when it is not */
+.hero__figure.is-manual .hero__rail button[aria-current="true"] span{ transition:none; width:100%; }
+
+@media (prefers-reduced-motion:reduce){
+  .hero__slide{ transition:none; }
+  .hero__rail button span{ transition:none; }
+  .hero__rail button[aria-current="true"] span{ width:100%; }
+}
+
 @media (max-width:860px){
   .hero{ grid-template-columns:1fr; }
   .hero__figure{ min-height:0; aspect-ratio:4/5; order:1; }

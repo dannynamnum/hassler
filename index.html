@@ -50,8 +50,30 @@
       <a class="btn" href="contact.html">Book a consultation</a>
       <p class="hero__meta">Thirty years of interior design</p>
     </div>
-    <figure class="hero__figure">
-      <img src="img/hero-stair.jpg" alt="A staircase dressed for Christmas with mercury glass spheres, beaded garland and lit trees" width="1200" height="900" fetchpriority="high">
+    <figure class="hero__figure" data-hero-carousel="6000" aria-label="Recent holiday installations">
+      <div class="hero__slide is-on">
+        <picture>
+          <source type="image/webp" srcset="img/hero/hero-staircase-640.webp 640w, img/hero/hero-staircase-1024.webp 1024w, img/hero/hero-staircase-1600.webp 1600w" sizes="(max-width:860px) 100vw, 47vw">
+          <img src="img/hero/hero-staircase-1024.jpg" alt="A glass-railed staircase dressed with mercury glass spheres, beaded garland and lit cone trees" width="1024" height="1365" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="hero__slide">
+        <picture>
+          <source type="image/webp" srcset="img/hero/hero-foyer-640.webp 640w, img/hero/hero-foyer-1024.webp 1024w, img/hero/hero-foyer-1600.webp 1600w" sizes="(max-width:860px) 100vw, 47vw">
+          <img src="img/hero/hero-foyer-1024.jpg" alt="A two-storey foyer with a tall Christmas tree in blue, silver and white beneath a lit balcony garland" width="1024" height="1365" loading="lazy">
+        </picture>
+      </div>
+      <div class="hero__slide">
+        <picture>
+          <source type="image/webp" srcset="img/hero/hero-birch-640.webp 640w, img/hero/hero-birch-1024.webp 1024w, img/hero/hero-birch-1600.webp 1600w" sizes="(max-width:860px) 100vw, 47vw">
+          <img src="img/hero/hero-birch-1024.jpg" alt="Lit birch trees and mercury glass cones against a marble wall, with frosted garland at the base" width="1024" height="1365" loading="lazy">
+        </picture>
+      </div>
+      <div class="hero__rail">
+        <button type="button" aria-current="true" aria-label="Show photograph 1 of 3"><span></span></button>
+        <button type="button" aria-label="Show photograph 2 of 3"><span></span></button>
+        <button type="button" aria-label="Show photograph 3 of 3"><span></span></button>
+      </div>
     </figure>
   </section>
 
@@ -178,6 +200,6 @@
   </div>
 </footer>
 
-<script src="js/nav.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>
