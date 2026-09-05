@@ -28,7 +28,7 @@
   --sans: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
 
-  --fs-hero:  clamp(44px, 6.2vw, 86px);
+  --fs-hero:  clamp(34px, 4.3vw, 60px);
   --fs-h2:    clamp(30px, 4.7vw, 58px);
   --fs-h3:    clamp(23px, 2.9vw, 33px);
   --fs-quote: clamp(26px, 3.9vw, 46px);
@@ -96,7 +96,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   text-transform:uppercase; line-height:1.02; text-wrap:balance; color:var(--ink);
   font-size:var(--fs-h2); letter-spacing:.07em;
 }
-.display--hero{ font-size:var(--fs-hero); letter-spacing:.03em; line-height:.98; }
+.display--hero{ font-size:var(--fs-hero); letter-spacing:.02em; line-height:1.02; }
 .display--sm{ font-size:var(--fs-h3); letter-spacing:.12em; line-height:1.14; }
 
 .prose{ margin:0; max-width:40ch; color:var(--ink-2); }
@@ -227,6 +227,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   min-height:min(88vh, 940px);
 }
 .hero__figure img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero__actions{ display:flex; flex-wrap:wrap; gap:12px; }
 .hero__meta{
   display:flex; align-items:center; gap:14px;
   font-family:var(--sans); font-size:11px; letter-spacing:.24em;
@@ -350,6 +351,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .steps p{ margin:0; font-size:16.5px; line-height:1.66; color:#D7DED8; }
 
 /* --- gallery teaser, asymmetric ------------------------------------------ */
+.teaser-body{ max-width:62ch; margin:calc(clamp(38px,5vw,64px) * -1 + 6px) 0 30px; }
 .plates{
   display:grid; gap:2px;
   grid-template-columns:minmax(0,1.34fr) minmax(0,1fr);
@@ -418,6 +420,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .site-foot .wordmark{ font-family:var(--sans); font-weight:300; line-height:1.3; }
 .site-foot .wordmark b{ display:block; font-weight:400; font-size:15px; letter-spacing:.3em; text-transform:uppercase; }
 .site-foot .wordmark span{ display:block; font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:#A9BEB0; }
+.site-foot .wordmark em{ display:block; margin-top:14px; font-style:normal; font-size:13.5px; letter-spacing:.02em; color:#D7DED8; max-width:30ch; line-height:1.5; }
 .foot-detail{ display:flex; flex-direction:column; gap:8px; font-family:var(--sans); font-size:15px; color:#D7DED8; }
 .foot-detail a{ align-self:flex-start; color:var(--paper); text-decoration:none; border-bottom:1px solid rgba(245,243,239,.32); }
 .foot-detail a:hover{ border-bottom-color:var(--paper); }
