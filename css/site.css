@@ -46,7 +46,7 @@
 }
 
 *, *::before, *::after{ box-sizing:border-box; }
-html{ -webkit-text-size-adjust:100%; }
+html{ -webkit-text-size-adjust:100%; scroll-padding-top:96px; }
 
 body{
   margin:0;
@@ -144,7 +144,10 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
    Header — monogram, hairline, single-line wordmark
    ========================================================================== */
 
-.site-head{ border-bottom:1px solid var(--line); background:var(--paper); }
+.site-head{
+  position:sticky; top:0; z-index:50;
+  border-bottom:1px solid var(--line); background:var(--paper);
+}
 .site-head .shell{
   display:flex; align-items:center; justify-content:space-between;
   gap:24px; padding-top:26px; padding-bottom:26px;
