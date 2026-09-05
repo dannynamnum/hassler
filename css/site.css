@@ -156,9 +156,13 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .brand img{ height:40px; width:auto; }
 .brand .divider{ width:1px; height:32px; background:var(--line); flex:none; }
 .brand .name{
+  display:flex; align-items:baseline; gap:.5em;
   font-family:var(--sans); font-weight:300; font-size:13px;
-  letter-spacing:.34em; text-transform:uppercase; color:var(--ink); white-space:nowrap;
+  letter-spacing:.34em; text-transform:uppercase; color:var(--ink);
 }
+.brand .name span{ white-space:nowrap; }
+.brand{ flex:0 1 auto; min-width:0; }
+.nav-toggle{ margin-left:auto; }
 
 .nav-toggle{ display:none; flex:none; background:none; border:1px solid var(--line); padding:12px 13px; cursor:pointer; }
 .nav-toggle i{ display:block; width:20px; height:1px; background:var(--ink); }
@@ -184,9 +188,17 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   .nav a{ display:block; padding:16px 0; border-bottom:none; font-size:13px; }
   .nav a[aria-current="page"]{ border-bottom:none; }
 }
-@media (max-width:420px){
-  .brand .name{ font-size:11px; letter-spacing:.24em; }
+/* On a phone the single-line wordmark and the menu button fight for room —
+   at 430px they needed 385 of 390px, which real Archivo Light overruns even
+   though the Helvetica fallback fits. Stack it instead of shaving pixels. */
+@media (max-width:600px){
+  .brand{ gap:12px; }
   .brand img{ height:34px; }
+  .brand .divider{ height:36px; }
+  .brand .name{
+    flex-direction:column; gap:4px;
+    font-size:11px; letter-spacing:.26em; line-height:1.1;
+  }
 }
 
 /* ==========================================================================
@@ -231,11 +243,12 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .hero__slide.is-on{ opacity:1; }
 
 .hero__rail{
-  position:absolute; left:0; right:0; bottom:0; height:44px; z-index:3;
+  position:absolute; bottom:0; right:0; height:44px; z-index:3;
+  /* The paper panel cuts across this figure and sits at z-index 2, so a rail
+     starting at the figure's edge paints its gradient over the paper. Start
+     where the panel ends. This also keeps the three segments equal. */
+  left:var(--overlap);
   display:flex; gap:2px; align-items:flex-end;
-  /* the paper panel overlaps this figure, so inset the rail by the same
-     amount or the first segment is short by whatever is hidden behind it */
-  padding-left:var(--overlap);
   background:linear-gradient(to top, rgba(51,48,46,.52), rgba(51,48,46,0));
 }
 .hero__rail button{
