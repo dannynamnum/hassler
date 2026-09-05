@@ -18,7 +18,11 @@
 
 <header class="site-head">
   <div class="shell">
-    <a class="brand" href="index.html"><img src="img/logo.svg" alt="Pam Hassler Interiors" width="212" height="66"></a>
+    <a class="brand" href="index.html">
+      <img src="img/logo-mark.svg" alt="" width="38" height="65">
+      <span class="divider"></span>
+      <span class="name">Pam Hassler Interiors</span>
+    </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
       <i></i><i></i><i></i>
     </button>
@@ -39,73 +43,99 @@
 
   <!-- ============ hero ============ -->
   <section class="hero">
-    <div class="hero__text">
+    <div class="hero__text grain">
       <p class="eyebrow">Palm Beach &amp; Martin County</p>
-      <h1 class="display">Christmas,<br>handled</h1>
-      <p class="prose">Design, installation and takedown for homes across South Florida. You come home to it finished.</p>
+      <h1 class="display display--hero">Christmas,<br>handled</h1>
+      <p class="prose prose--lead">Design, installation and takedown for homes across South Florida. You come home to it finished.</p>
       <a class="btn" href="contact.html">Book a consultation</a>
+      <p class="hero__meta">Thirty years of interior design</p>
     </div>
     <figure class="hero__figure">
       <img src="img/hero-stair.jpg" alt="A staircase dressed for Christmas with mercury glass spheres, beaded garland and lit trees" width="1200" height="900" fetchpriority="high">
     </figure>
   </section>
 
-  <!-- ============ what the service is ============ -->
-  <section class="band band--sunk">
-    <div class="shell promise">
-      <div class="stack stack--tight">
-        <p class="eyebrow">The service</p>
-        <h2 class="display display--sm">Designed, installed,<br>and taken down</h2>
+  <!-- ============ the service, as a sequence ============ -->
+  <section class="band band--sunk grain">
+    <div class="shell">
+      <div class="section-head section-head--split">
+        <div class="stack stack--tight">
+          <p class="eyebrow">The service</p>
+          <h2 class="display">Three visits,<br>one season</h2>
+        </div>
+        <p class="prose prose--wide">Every tree, mantel, garland and table is planned around the house it lives in, then installed by Pam&rsquo;s team and packed away in January.</p>
       </div>
-      <div class="stack">
-        <p class="prose prose--wide">Every tree, mantel, garland and table is planned around the house it lives in, then installed by Pam&rsquo;s team and packed away in January. Thirty years of residential interior design sit behind each one.</p>
-        <ul class="service-list">
-          <li><b>Design</b><span>A scheme built for your rooms, your palette and the way you actually use the house.</span></li>
-          <li><b>Install</b><span>Trees, garland, mantels, tablescapes and lighting, set in a single visit.</span></li>
-          <li><b>Takedown</b><span>Everything removed, labelled and stored ready for next season.</span></li>
-        </ul>
-      </div>
+      <ol class="steps">
+        <li>
+          <span class="num">01</span>
+          <h3>Design</h3>
+          <p>A walkthrough, then a scheme built for your rooms, your palette and the way you actually use the house.</p>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <h3>Install</h3>
+          <p>Trees, garland, mantels, tablescapes and lighting, set in a single visit while you are out of the way.</p>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <h3>Takedown</h3>
+          <p>Everything removed in January, labelled and stored so next season starts from order rather than boxes.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- ============ gallery teaser ============ -->
-  <section class="band">
+  <section class="band grain">
     <div class="shell">
-      <div class="teaser-head">
+      <div class="section-head section-head--split">
         <div class="stack stack--tight">
           <p class="eyebrow">Recent work</p>
-          <h2 class="display display--sm">A few rooms from last season</h2>
+          <h2 class="display">A few rooms<br>from last season</h2>
         </div>
         <a class="textlink" href="gallery.html">See the full gallery</a>
       </div>
-      <div class="grid-3">
-        <figure><img src="img/teaser-foyer.jpg" alt="A two-storey foyer with a tall Christmas tree in blue, silver and white beneath a lit balcony garland" width="900" height="1200" loading="lazy"></figure>
-        <figure><img src="img/teaser-stair.jpg" alt="A floating oak staircase lined with mirrored spheres and mercury glass trees" width="900" height="1200" loading="lazy"></figure>
-        <figure><img src="img/teaser-tree.jpg" alt="A Christmas tree in burgundy, gold and cream beside contemporary artwork and a garden window" width="900" height="1200" loading="lazy"></figure>
+      <div class="plates">
+        <figure class="plate plate--tall">
+          <img src="img/teaser-foyer.jpg" alt="A two-storey foyer with a tall Christmas tree in blue, silver and white beneath a lit balcony garland" width="900" height="1200" loading="lazy">
+        </figure>
+        <figure class="plate plate--half">
+          <img src="img/teaser-mantel.jpg" alt="A floating staircase lined with mercury glass trees and mirrored spheres under a cascade of pendant lights" width="900" height="1200" loading="lazy">
+        </figure>
+        <figure class="plate plate--half">
+          <img src="img/teaser-tree.jpg" alt="A Christmas tree in burgundy, gold and cream beside contemporary artwork and a garden window" width="900" height="1200" loading="lazy">
+        </figure>
       </div>
     </div>
   </section>
 
   <!-- ============ testimonial ============ -->
-  <section class="band band--sunk">
+  <section class="band band--sunk grain">
     <div class="shell quote-row">
-      <figure class="quote quote--wide">
-        <blockquote>For the past several years, Pam has transformed our family home into a magical Christmas wonderland, and every year feels more special than the last.</blockquote>
+      <figure class="quote">
+        <span class="openmark" aria-hidden="true">&ldquo;</span>
+        <blockquote>Pam has transformed our family home into a magical Christmas wonderland, and every year feels more special than the last.</blockquote>
         <figcaption>Private client &middot; Palm Beach County</figcaption>
       </figure>
       <div class="stack">
+        <div class="rule"><i></i></div>
         <p class="prose prose--wide">Her eye for detail is unmatched, from the perfectly balanced colour palettes to the thoughtful little touches that make each room feel cozy, festive, and uniquely ours.</p>
         <a class="textlink" href="testimonials.html">Read all testimonials</a>
       </div>
     </div>
   </section>
 
+  <!-- ============ full-bleed break ============ -->
+  <figure class="figure-band">
+    <img src="img/band-dining.jpg" alt="A dining room set for the season with a run of trees, silver ornaments and candles down a walnut table" width="1200" height="900" loading="lazy">
+  </figure>
+
   <!-- ============ closing call to action ============ -->
   <section class="band band--pine">
     <div class="shell cta-row">
       <div class="stack stack--tight">
         <p class="eyebrow">Start a conversation</p>
-        <h2 class="display display--sm">Tell me about your house</h2>
+        <h2 class="display">Tell me about<br>your house</h2>
         <p class="prose">A short call is usually enough to know whether it&rsquo;s a fit.</p>
       </div>
       <div class="stack">
