@@ -48,13 +48,20 @@
 
 <main id="main">
 
-  <section class="page-hero grain">
-    <div class="shell">
+  <!-- ============ hero: same split as Home, no carousel ============ -->
+  <section class="hero hero--page">
+    <div class="hero__text grain">
       <p class="eyebrow">Interior design</p>
-      <h1 class="display">Residential interior design,<br>start to finish.</h1>
-      <div class="rule rule--plain" aria-hidden="true"></div>
-      <p class="prose prose--wide prose--lead">More than thirty years of helping homeowners create spaces that reflect how they actually live. I work on every part of the process, from the first vision through to the final installation.</p>
+      <h1 class="display display--hero">Residential interior design, start to finish.</h1>
+      <p class="prose prose--lead">More than thirty years of helping homeowners create spaces that reflect how they actually live. I work on every part of the process, from the first vision through to the final installation.</p>
+      <p class="hero__meta">Palm Beach &amp; Martin County</p>
     </div>
+    <figure class="hero__figure">
+      <picture>
+        <source type="image/webp" srcset="img/work/gabriel-house-kitchen-family-rm-640.webp 640w, img/work/gabriel-house-kitchen-family-rm-1024.webp 1024w, img/work/gabriel-house-kitchen-family-rm-1400.webp 1400w" sizes="(max-width:860px) 100vw, 47vw">
+        <img src="img/work/gabriel-house-kitchen-family-rm-1024.jpg" alt="An open plan great room looking from the kitchen toward the fireplace" width="1024" height="683" fetchpriority="high">
+      </picture>
+    </figure>
   </section>
 
   <section class="band grain">
@@ -133,10 +140,6 @@
         <p class="prose">Tell me about the house and what you would like it to feel like. A call is the easiest place to start.</p>
       </div>
       <div class="stack">
-        <div class="cta-direct">
-          <a href="tel:+15612522272">561-252-2272</a>
-          <a href="mailto:pam@pamhasslerinteriors.com">pam@pamhasslerinteriors.com</a>
-        </div>
         <a class="btn btn--onPine" href="contact.html">Get in touch</a>
       </div>
     </div>

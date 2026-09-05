@@ -48,20 +48,24 @@
 
 <main id="main">
 
-  <section class="page-hero grain">
-    <div class="shell">
-      <span class="badge">
-        <picture>
-          <source type="image/webp" srcset="img/badge-400.webp 400w, img/badge-800.webp 800w" sizes="164px">
-          <img src="img/badge-400.png" alt="Santa&rsquo;s Design Helpers, by Pam Hassler Interiors" width="400" height="557">
-        </picture>
-      </span>
+  <!-- ============ hero: same split as Home; the badge takes the image slot ============ -->
+  <section class="hero hero--page">
+    <div class="hero__text grain">
       <p class="eyebrow">Holiday decorating</p>
-      <h1 class="display">Christmas, handled.</h1>
+      <h1 class="display display--hero">Christmas, handled.</h1>
       <div class="rule"><i></i></div>
-      <p class="prose prose--wide prose--lead">I design it. My team installs it. You get the house you wanted without spending a single Saturday on a ladder.</p>
-      <a class="btn" href="contact.html">Book your holiday install</a>
+      <p class="prose prose--lead">I design it. My team installs it. You get the house you wanted without spending a single Saturday on a ladder.</p>
+      <div class="hero__actions">
+        <a class="btn" href="contact.html">Book your holiday install</a>
+        <a class="btn btn--ghost" href="gallery.html">See the season</a>
+      </div>
     </div>
+    <figure class="hero__figure hero__figure--badge">
+      <picture>
+        <source type="image/webp" srcset="img/badge-400.webp 400w, img/badge-800.webp 800w" sizes="(max-width:860px) 62vw, 30vw">
+        <img src="img/badge-800.png" alt="Santa&rsquo;s Design Helpers, by Pam Hassler Interiors" width="800" height="1114" fetchpriority="high">
+      </picture>
+    </figure>
   </section>
 
   <section class="band grain">
@@ -160,10 +164,6 @@
         <p class="prose">Holiday work gets booked months before anyone is thinking about Christmas. If you want this year handled, this is the time to call. Palm Beach County and Martin County.</p>
       </div>
       <div class="stack">
-        <div class="cta-direct">
-          <a href="tel:+15612522272">561-252-2272</a>
-          <a href="mailto:pam@pamhasslerinteriors.com">pam@pamhasslerinteriors.com</a>
-        </div>
         <a class="btn btn--onPine" href="contact.html">Get in touch</a>
       </div>
     </div>
