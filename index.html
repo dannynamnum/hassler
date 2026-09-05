@@ -51,7 +51,7 @@
   <!-- ============ hero ============ -->
   <section class="hero">
     <div class="hero__text grain">
-      <p class="eyebrow">Residential interior design &middot; Palm Beach &amp; Martin County</p>
+      <p class="eyebrow">Residential interior design</p>
       <h1 class="display display--hero">Thirty years designing homes in South Florida.</h1>
       <p class="prose prose--lead">Full-service residential design, from the first vision and space planning through selections, sourcing and the final installation. And, for a few weeks of the year, holiday decorating built the same way.</p>
       <div class="hero__actions">
@@ -60,11 +60,30 @@
       </div>
       <p class="hero__meta">Owner, Pam Hassler Interiors</p>
     </div>
-    <figure class="hero__figure">
-      <picture>
-        <source type="image/webp" srcset="img/hero/hero-stair-640.webp 640w, img/hero/hero-stair-1024.webp 1024w, img/hero/hero-stair-1400.webp 1400w" sizes="(max-width:860px) 100vw, 47vw">
-        <img src="img/hero/hero-stair-1024.jpg" alt="A floating glass-railed staircase dressed with mercury glass spheres and pearl garland" width="1024" height="768" fetchpriority="high">
-      </picture>
+    <figure class="hero__figure" data-hero-carousel="6000" aria-label="Recent work">
+      <div class="hero__slide is-on">
+        <picture>
+          <source type="image/webp" srcset="img/hero/hero-stair-640.webp 640w, img/hero/hero-stair-1024.webp 1024w, img/hero/hero-stair-1400.webp 1400w" sizes="(max-width:860px) 100vw, 47vw">
+          <img src="img/hero/hero-stair-1024.jpg" alt="A floating glass-railed staircase dressed with mercury glass spheres and pearl garland" width="1024" height="768" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="hero__slide">
+        <picture>
+          <source type="image/webp" srcset="img/hero/hero-foyer-640.webp 640w, img/hero/hero-foyer-1024.webp 1024w, img/hero/hero-foyer-1600.webp 1600w" sizes="(max-width:860px) 100vw, 47vw">
+          <img src="img/hero/hero-foyer-1024.jpg" alt="A two-storey foyer with a tall Christmas tree in blue, silver and white beneath a lit balcony garland" width="1024" height="1365" decoding="async">
+        </picture>
+      </div>
+      <div class="hero__slide">
+        <picture>
+          <source type="image/webp" srcset="img/hero/hero-birch-640.webp 640w, img/hero/hero-birch-1024.webp 1024w, img/hero/hero-birch-1600.webp 1600w" sizes="(max-width:860px) 100vw, 47vw">
+          <img src="img/hero/hero-birch-1024.jpg" alt="Lit birch trees and mercury glass cones against a marble wall, with frosted garland at the base" width="1024" height="1365" decoding="async">
+        </picture>
+      </div>
+      <div class="hero__rail">
+        <button type="button" aria-current="true" aria-label="Show photograph 1 of 3"><span></span></button>
+        <button type="button" aria-label="Show photograph 2 of 3"><span></span></button>
+        <button type="button" aria-label="Show photograph 3 of 3"><span></span></button>
+      </div>
     </figure>
   </section>
 
