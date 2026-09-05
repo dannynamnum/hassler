@@ -37,17 +37,14 @@
   var wait = parseInt(box.getAttribute('data-hero-carousel'), 10) || 6000;
   var at = 0, timer = null, stopped = calm;
 
+  // one source of truth for the dwell: the fill animation is told how long
+  // a frame lasts, so the bar can never drift out of step with the timer
+  box.style.setProperty('--dwell', (wait / 1000) + 's');
+
   function show(next) {
     next = (next + slides.length) % slides.length;
     slides.forEach(function (s, i) { s.classList.toggle('is-on', i === next); });
     dots.forEach(function (d, i) {
-      var bar = d.querySelector('span');
-      if (bar) {                       // restart the fill on the segment now playing
-        bar.style.transition = 'none';
-        bar.style.width = '0';
-        void bar.offsetHeight;
-        bar.style.transition = '';
-      }
       d.setAttribute('aria-current', i === next ? 'true' : 'false');
     });
     at = next;

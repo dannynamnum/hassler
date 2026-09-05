@@ -253,22 +253,36 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 }
 .hero__rail button{
   flex:1 1 0; height:3px; margin:0 0 14px; padding:0; border:0; cursor:pointer;
-  position:relative; background:rgba(245,243,239,.44);
+  position:relative; overflow:hidden; background:rgba(245,243,239,.30);
   box-shadow:0 1px 3px rgba(30,28,26,.5);
 }
+/* the track of the segment you are on is brighter, so there is an indicator
+   even at the instant the fill restarts from zero */
+.hero__rail button[aria-current="true"]{ background:rgba(245,243,239,.55); }
 .hero__rail button:first-child{ margin-left:24px; }
 .hero__rail button:last-child{ margin-right:24px; }
-.hero__rail button span{ position:absolute; inset:0; display:block; width:0; background:var(--paper); }
-.hero__rail button[aria-current="true"] span{ width:100%; transition:width 6s linear; }
+.hero__rail button span{
+  position:absolute; inset:0; display:block; background:var(--paper);
+  transform:scaleX(0); transform-origin:left center;
+}
+/* Driven by an animation rather than a transition. A transition has to be
+   restarted from script, which meant setting an inline width — and an inline
+   width outranks the stylesheet, so the fill was pinned at zero and never
+   ran. The animation restarts by itself each time the attribute flips. */
+.hero__rail button[aria-current="true"] span{
+  animation:railFill var(--dwell, 6s) linear forwards;
+}
+@keyframes railFill{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
 .hero__rail button:focus-visible{ outline:2px solid var(--paper); outline-offset:5px; }
-/* once someone takes control the fill stops animating, so it never implies
-   the carousel is still running when it is not */
-.hero__figure.is-manual .hero__rail button[aria-current="true"] span{ transition:none; width:100%; }
+/* once someone takes control the fill stops counting down and just marks
+   where you are, so it never implies the carousel is still running */
+.hero__figure.is-manual .hero__rail button[aria-current="true"] span{
+  animation:none; transform:scaleX(1);
+}
 
 @media (prefers-reduced-motion:reduce){
   .hero__slide{ transition:none; }
-  .hero__rail button span{ transition:none; }
-  .hero__rail button[aria-current="true"] span{ width:100%; }
+  .hero__rail button[aria-current="true"] span{ animation:none; transform:scaleX(1); }
 }
 
 @media (max-width:860px){
