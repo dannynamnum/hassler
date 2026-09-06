@@ -108,7 +108,9 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   letter-spacing:.14em; text-transform:uppercase; color:var(--mute);
 }
 
-/* rule-and-diamond ornament — the single red mark on the page */
+/* Rule and diamond. Holiday territory only as of 6 Sep — the diamond is a
+   seasonal mark, so the design pages use .rule--plain below and the only
+   red left on them is the nav underline and focus rings. */
 .rule{ display:flex; align-items:center; gap:16px; width:100%; }
 .rule::before, .rule::after{ content:""; height:1px; background:var(--stone); opacity:.5; flex:1 1 auto; }
 .rule i{ flex:none; width:7px; height:7px; background:var(--red); transform:rotate(45deg); }
