@@ -340,9 +340,29 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 
 @media (max-width:860px){
   .hero{ grid-template-columns:1fr; }
-  .hero__figure{ min-height:0; aspect-ratio:4/5; order:1; }
-  .hero--page .hero__figure{ min-height:0; aspect-ratio:4/3; }
-  .hero--page .hero__figure--wash{ aspect-ratio:4/3; }
+
+  /* Every child of the hero figure is absolutely positioned — the carousel
+     slides, the page-hero picture, the red wash and its mark — so the figure
+     has no content height of its own. Sizing it with `aspect-ratio` works in
+     Chrome, which resolves the ratio against the definite column width. iOS
+     Safari does not: it sizes the grid row from content (zero), stretches the
+     item into it, and the hero image vanishes completely. It looked fine in
+     every desktop browser and was invisible only on a real phone.
+
+     So the height is stated outright here. No aspect-ratio to resolve, and
+     `align-self:start` so stretch cannot flatten it either. The vh cap keeps
+     the image from eating a whole screen on a tall phone; object-fit handles
+     the crop when the cap bites. */
+  .hero__figure{
+    order:1; align-self:start;
+    aspect-ratio:auto;
+    height:min(125vw, 66vh);
+    min-height:280px;   /* a floor, so no future change can flatten it again */
+  }
+  .hero--page .hero__figure{
+    height:min(75vw, 56vh);
+    min-height:220px;
+  }
   .hero--page .wash__mark{ inset:clamp(30px,8vw,56px); }
   .hero__text{
     order:2; margin-right:0; gap:20px;
