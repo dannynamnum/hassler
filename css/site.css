@@ -519,10 +519,22 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
    than full bleed, with the copy beneath it. It replaces the three pine cards,
    which put a third slab of green on a page that already ends in two. The
    three-step cards still live on the Holiday page, where they belong. ----- */
-.pano{ margin:0; position:relative; overflow:hidden; aspect-ratio:11/5; background:var(--paper); }
+/* The image inside is in normal flow, so this is not exposed to the WebKit
+   collapse that killed the hero figures — but the floor costs nothing and
+   means a ratio that fails to resolve can never leave an empty band. */
+.pano{ margin:0; position:relative; overflow:hidden; aspect-ratio:11/5; min-height:160px; background:var(--paper); }
 .pano img{ width:100%; height:100%; object-fit:cover; display:block; }
 .pano::after{ content:""; position:absolute; inset:16px; border:1px solid rgba(245,243,239,.34); pointer-events:none; }
 @media (max-width:700px){ .pano{ aspect-ratio:16/10; } .pano::after{ inset:11px; } }
+
+/* A lede strip: the same contained panoramic, used directly under a text-only
+   page hero. Those pages opened with a whole phone screen of nothing but a
+   headline, which reads as a page that has not loaded. Shallower than a normal
+   .pano so it sits under the headline rather than replacing it, and shallower
+   again on a phone where vertical space is the scarce thing. */
+.shell--strip{ padding-top:0; }
+.pano--lede{ aspect-ratio:24/7; min-height:140px; margin-top:clamp(-8px,-0.6vw,0px); }
+@media (max-width:700px){ .pano--lede{ aspect-ratio:3/2; } }
 
 .pano-note{
   display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
