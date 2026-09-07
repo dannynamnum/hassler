@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="29.125 42.34 43 43" width="43" height="43" role="img" aria-label="Pam Hassler Interiors">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #888a8c;
+      }
+
+      .cls-2 {
+        fill: #5a5b5d;
+        stroke: #5a5b5d;
+        stroke-width: .33px;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #7b7c7f;
+        stroke-miterlimit: 10;
+        stroke-width: 1.27px;
+      }
+
+      .cls-4 {
+        fill: #48484a;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.5, SVG Export Plug-In . SVG Version: 1.2.0 Build 176)  -->
+  <rect x="29.125" y="42.34" width="43" height="43" fill="#F5F3EF"/>
+<g>
+<g>
+<rect class="cls-3" x="40.25" y="44.92" width="20.75" height="37.84"/>
+<g>
+        <path class="cls-2" d="M44.03,58.45v10.39h-1.44v-21.85h10.02c3.57,0,6.39,1.97,6.39,5.7s-2.59,5.77-6.36,5.77h-8.61ZM44.03,57.14h8.67c2.85,0,4.78-1.67,4.78-4.42s-1.83-4.42-5.01-4.42h-8.44v8.85Z"/>
+        <path class="cls-2" d="M44.03,68.76h13.23v-9.27h1.44v21.52h-1.44v-10.94h-13.23v10.94h-1.44v-18.87h1.44v6.62Z"/>
+      </g>
+</g>
+</g>
+</svg>
