@@ -153,7 +153,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .section-link{ display:inline-block; margin-top:clamp(18px,2vw,26px); margin-bottom:clamp(30px,4vw,52px); }
 
 /* ==========================================================================
-   Header — monogram, hairline, single-line wordmark
+   Header — Pam's original logo, used whole
    ========================================================================== */
 
 .site-head{
@@ -162,18 +162,15 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 }
 .site-head .shell{
   display:flex; align-items:center; justify-content:space-between;
-  gap:24px; padding-top:26px; padding-bottom:26px;
+  gap:24px; padding-top:clamp(15px,1.7vw,22px); padding-bottom:clamp(15px,1.7vw,22px);
 }
-.brand{ display:flex; align-items:center; gap:15px; flex:none; text-decoration:none; }
-.brand img{ height:clamp(46px,4.4vw,58px); width:auto; }
-.brand .divider{ width:1px; height:40px; background:var(--line); flex:none; }
-.brand .name{
-  display:flex; align-items:baseline; gap:.5em;
-  font-family:var(--sans); font-weight:300; font-size:clamp(13px,1.05vw,15px);
-  letter-spacing:.32em; text-transform:uppercase; color:var(--ink);
-}
-.brand .name span{ white-space:nowrap; }
-.brand{ flex:0 1 auto; min-width:0; }
+/* The header used to assemble a lockup out of three pieces: the monogram
+   cropped from the artwork, a hairline, and the name typeset in Archivo.
+   That was our reconstruction, not Pam's logo. img/logo.svg is the original
+   mark, monogram and stacked type together, so it is used whole and sized
+   by width — it is 3.2:1, not the near-square monogram it replaces. */
+.brand{ display:block; flex:0 1 auto; min-width:0; text-decoration:none; }
+.brand img{ display:block; width:clamp(200px,20vw,264px); height:auto; }
 .nav-toggle{ margin-left:auto; }
 
 .nav-toggle{ display:none; flex:none; background:none; border:1px solid var(--line); padding:12px 13px; cursor:pointer; }
@@ -201,17 +198,11 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
   .nav a{ display:block; padding:16px 0; border-bottom:none; font-size:13px; }
   .nav a[aria-current="page"]{ border-bottom:none; }
 }
-/* On a phone the single-line wordmark and the menu button fight for room —
-   at 430px they needed 385 of 390px, which real Archivo Light overruns even
-   though the Helvetica fallback fits. Stack it instead of shaving pixels. */
+/* On a phone the logo and the menu button share one line. The mark is a
+   single image now, so it scales rather than reflowing — 56vw leaves room
+   for the button and the gutters at 360px with pixels to spare. */
 @media (max-width:600px){
-  .brand{ gap:12px; }
-  .brand img{ height:42px; }
-  .brand .divider{ height:42px; }
-  .brand .name{
-    flex-direction:column; gap:4px;
-    font-size:11px; letter-spacing:.26em; line-height:1.1;
-  }
+  .brand img{ width:min(56vw,208px); }
 }
 
 /* ==========================================================================
