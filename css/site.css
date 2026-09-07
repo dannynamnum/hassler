@@ -168,9 +168,9 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
    cropped from the artwork, a hairline, and the name typeset in Archivo.
    That was our reconstruction, not Pam's logo. img/logo.svg is the original
    mark, monogram and stacked type together, so it is used whole and sized
-   by width — it is 3.2:1, not the near-square monogram it replaces. */
+   by width — it is 4.3:1, not the near-square monogram it replaces. */
 .brand{ display:block; flex:0 1 auto; min-width:0; text-decoration:none; }
-.brand img{ display:block; width:clamp(200px,20vw,264px); height:auto; }
+.brand img{ display:block; width:clamp(238px,24vw,336px); height:auto; }
 .nav-toggle{ margin-left:auto; }
 
 .nav-toggle{ display:none; flex:none; background:none; border:1px solid var(--line); padding:12px 13px; cursor:pointer; }
@@ -202,7 +202,7 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
    single image now, so it scales rather than reflowing — 56vw leaves room
    for the button and the gutters at 360px with pixels to spare. */
 @media (max-width:600px){
-  .brand img{ width:min(56vw,208px); }
+  .brand img{ width:min(62vw,232px); }
 }
 
 /* ==========================================================================
