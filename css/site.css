@@ -535,6 +535,13 @@ a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-off
 .pano--lede{ aspect-ratio:24/7; min-height:140px; margin-top:clamp(-8px,-0.6vw,0px); }
 @media (max-width:700px){ .pano--lede{ aspect-ratio:3/2; } }
 
+/* Contact opens on this kitchen rather than the aerial — an aerial reads as a
+   real-estate listing, not design work. Cropped to 24:7 the frame's own centre
+   cuts the pendant through the middle of its shade; biasing up to 36% keeps
+   the pendant, the backsplash and the island, and still shows the chair backs. */
+.pano--kitchen img{ object-position:center 36%; }
+@media (max-width:700px){ .pano--kitchen img{ object-position:center 45%; } }
+
 .pano-note{
   display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between;
   gap:18px 48px; margin-top:clamp(22px,2.6vw,34px);
